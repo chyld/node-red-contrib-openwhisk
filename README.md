@@ -1,5 +1,7 @@
 # node-red-contrib-openwhisk
 
+![NodeRed Flow](images/nodered.png)
+
 [![NPM](https://nodei.co/npm/node-red-contrib-openwhisk.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-red-contrib-openwhisk/)
 
 [![npm](https://badge.fury.io/js/node-red-contrib-openwhisk.svg)](https://www.npmjs.com/package/node-red-contrib-openwhisk)
