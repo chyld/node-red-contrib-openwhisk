@@ -7,12 +7,7 @@
     "url": "git+https://github.com/chyld/node-red-contrib-openwhisk.git"
   },
   "keywords": [
-    "node-red",
-    "node",
-    "red",
-    "openwhisk",
-    "ibm",
-    "microservice"
+    "node-red"
   ],
   "author": "Chyld Medford <chyld.medford@gmail.com>",
   "license": "MIT",
