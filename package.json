@@ -1,13 +1,18 @@
 {
   "name": "node-red-contrib-openwhisk",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Compose OpenWhisk microservices from the NodeRED GUI.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chyld/node-red-contrib-openwhisk.git"
   },
   "keywords": [
-    "node-red"
+    "node-red",
+    "node",
+    "red",
+    "ibm",
+    "bluemix",
+    "openwhisk"
   ],
   "author": "Chyld Medford <chyld.medford@gmail.com>",
   "license": "MIT",
