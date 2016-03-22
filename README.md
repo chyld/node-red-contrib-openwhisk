@@ -16,6 +16,17 @@ Compose OpenWhisk microservices from the NodeRED GUI.
 $ npm install node-red-contrib-openwhisk --save
 ```
 
+## Usage
+The openwhisk node allows you to call OpenWhisk microservices from inside NodeRED.
+
+To setup, double click the openwhisk node. Enter the Organization, Space, Action and Authorization Key.
+
+The input to your openwhisk service is whatever is present inside msg.payload.
+
+The openwhisk node will show colored lights as it is processing your request. The light will become green on success or red on failure. If a failure occurs, it will be displayed in the debug panel.
+
+The resulting data will be present on msg.openwhisk.
+  
 
 ## License
 MIT © [Chyld Medford](https://github.com/chyld)
