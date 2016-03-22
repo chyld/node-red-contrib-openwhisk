@@ -1,41 +1,49 @@
-<script type="text/javascript">
-    RED.nodes.registerType('openwhisk',{
-        category: 'function',
-        color: '#3FADB5',
-        defaults: {
-          org: {value:"", required: true},
-          space: {value:"", required: true},
-          action: {value:"", required: true}
-        },
-        credentials: {
-          key: {type:"password"}
-        },
-        inputs:1,
-        outputs:1,
-        icon: "feed.png",
-        label: "openwhisk"
-    });
+<script type='text/javascript'>
+  RED.nodes.registerType('openwhisk', {
+    category: 'function',
+    color: '#3FADB5',
+    defaults: {
+      org:    {value:'', required: true},
+      space:  {value:'', required: true},
+      action: {value:'', required: true}
+    },
+    credentials: {
+      key:    {type:'password'}
+    },
+    inputs:  1,
+    outputs: 1,
+    icon: 'feed.png',
+    label: function() {
+      return this.action || 'openwhisk';
+    }
+  });
 </script>
 
-<script type="text/x-red" data-template-name="openwhisk">
-    <div class="form-row">
-        <label for="node-input-org">Organization</label>
-        <input type="text" id="node-input-org">
-    </div>
-    <div class="form-row">
-        <label for="node-input-space">Space</label>
-        <input type="text" id="node-input-space">
-    </div>
-    <div class="form-row">
-        <label for="node-input-action">Action</label>
-        <input type="text" id="node-input-action">
-    </div>
-    <div class="form-row">
-        <label for="node-input-key">Authorization Key</label>
-        <input type="password" id="node-input-key">
-    </div>
+
+<script type='text/x-red' data-template-name='openwhisk'>
+  <div class='form-row'>
+    <label for='node-input-org'>Organization</label>
+    <input type='text' id='node-input-org'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-space'>Space</label>
+    <input type='text' id='node-input-space'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-action'>Action</label>
+    <input type='text' id='node-input-action'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-key'>Authorization Key</label>
+    <input type='password' id='node-input-key'>
+  </div>
 </script>
 
-<script type="text/x-red" data-help-name="openwhisk">
-    <p>change me</p>
+
+<script type='text/x-red' data-help-name='openwhisk'>
+  <p>The openwhisk node allows you to call OpenWhisk microservices from inside NodeRED.</p>
+  <p>To setup, double click the openwhisk node. Enter the Organization, Space, Action and Authorization Key.</p>
+  <p>The input to your openwhisk service is whatever is present inside <b>msg.payload</b>.</p>
+  <p>The openwhisk node will show colored lights as it is processing your request. The light will become green on success or red on failure. If a failure occurs, it will be displayed in the debug panel.</p>
+  <p>The resulting data will be present on <b>msg.openwhisk</b></p>
 </script>

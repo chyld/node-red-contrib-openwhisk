@@ -1,32 +1,39 @@
-var OpenWhisk = require("openwhisk");
+var OpenWhisk = require('openwhisk');
 
-module.exports = function(RED) {
-    function OpenWhiskNode(config) {
-        RED.nodes.createNode(this, config);
-        var node = this;
-        node.on('input', function(msg) {
+module.exports = function(RED){
+  function OpenWhiskNode(config){
+    RED.nodes.createNode(this, config);
+    var node = this;
 
-            node.status({fill:"grey",shape:"ring",text:"request sent"});
+    node.on('input', function(msg){
+      node.status({fill:'grey',shape:'ring',text:'request sent'});
 
-            OpenWhisk(config.org, config.space, config.action, node.credentials.key, msg.payload)
-            .then(function(response){
-              node.status({fill:"green",shape:"dot",text:"response received"});
-              msg.xyz = response;
-              node.send(msg);
-            });
+      OpenWhisk(config.org, config.space, config.action, node.credentials.key, msg.payload)
+      .then(function(response){
+        msg.openwhisk = response;
 
-            // node.warn(config.org);
-            // node.warn(config.space);
-            // node.warn(config.action);
-            // node.error(node.credentials.key);
+        if(!msg.openwhisk.error){
+          node.status({fill:'green',shape:'dot',text:'response received'});
+        }else{
+          processError(node, msg.openwhisk.error);
+        }
 
-            // msg.payload = msg.payload.toLowerCase();
-            // node.send(msg);
-        });
+        node.send(msg);
+      })
+      .catch(function(err){
+        processError(node, err);
+      });
+    });
+  }
+
+  RED.nodes.registerType('openwhisk', OpenWhiskNode, {
+    credentials: {
+      key: {type:'password'}
     }
-    RED.nodes.registerType("openwhisk",OpenWhiskNode, {
-     credentials: {
-         key: {type:"password"}
-     }
-   });
+  });
+}
+
+function processError(node, err){
+  node.status({fill:'red',shape:'dot',text:'request failed'});
+  node.error(JSON.stringify(err));
 }
