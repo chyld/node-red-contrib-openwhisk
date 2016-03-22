@@ -1,6 +1,6 @@
 # node-red-contrib-openwhisk
 
-![NodeRed Flow](images/nodered.png)
+![NodeRed Flow](https://raw.githubusercontent.com/chyld/node-red-contrib-openwhisk/master/images/nodered.png)
 
 [![NPM](https://nodei.co/npm/node-red-contrib-openwhisk.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-red-contrib-openwhisk/)
 
