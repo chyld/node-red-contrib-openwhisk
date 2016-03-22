@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-openwhisk",
-  "version": "1.0.8",
+  "version": "1.0.15",
   "description": "Compose OpenWhisk microservices from the NodeRED GUI.",
   "repository": {
     "type": "git",
