@@ -4,6 +4,7 @@
 
 [![npm](https://badge.fury.io/js/node-red-contrib-openwhisk.svg)](https://www.npmjs.com/package/node-red-contrib-openwhisk)
 [![GitHub](https://img.shields.io/badge/github-code-blue.svg)](https://github.com/chyld/node-red-contrib-openwhisk)
+[![NodeRED](https://img.shields.io/badge/nodered-usage-red.svg)](http://flows.nodered.org/node/node-red-contrib-openwhisk)
 
 
 ## Description
