@@ -18,6 +18,10 @@ Compose OpenWhisk microservices from the NodeRED GUI.
 $ npm install node-red-contrib-openwhisk --save
 ```
 
+## Config
+![NodeRed Flow](https://raw.githubusercontent.com/chyld/node-red-contrib-openwhisk/master/images/config.png)
+
+
 ## Usage
 The openwhisk node allows you to call OpenWhisk microservices from inside NodeRED.
 
