@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('openwhisk',{
+        category: 'function',
+        color: '#3FADB5',
+        defaults: {
+          org: {value:"", required: true},
+          space: {value:"", required: true},
+          action: {value:"", required: true}
+        },
+        credentials: {
+          key: {type:"password"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "feed.png",
+        label: "openwhisk"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="openwhisk">
+    <div class="form-row">
+        <label for="node-input-org">Organization</label>
+        <input type="text" id="node-input-org">
+    </div>
+    <div class="form-row">
+        <label for="node-input-space">Space</label>
+        <input type="text" id="node-input-space">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action">Action</label>
+        <input type="text" id="node-input-action">
+    </div>
+    <div class="form-row">
+        <label for="node-input-key">Authorization Key</label>
+        <input type="password" id="node-input-key">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="openwhisk">
+    <p>change me</p>
+</script>
